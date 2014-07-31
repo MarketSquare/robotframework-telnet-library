@@ -1,7 +1,7 @@
 *** Setting ***
 Suite Setup       Run Tests    --loglevel DEBUG    standard_libraries/telnet/configuration.txt
 Force Tags        jybot    pybot
-Resource          telnet_resource.txt
+Resource          telnet_resource.robot
 
 *** Test Case ***
 Library Default Window Size

@@ -1,7 +1,7 @@
 *** Setting ***
 Suite Setup       Run Tests    --loglevel DEBUG    standard_libraries/telnet/read_and_write.txt
 Force Tags        jybot    pybot
-Resource          telnet_resource.txt
+Resource          telnet_resource.robot
 
 *** Test Case ***
 Write & Read

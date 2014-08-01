@@ -3,7 +3,7 @@ Test Setup        Login And Set Prompt
 Test Teardown     Close All Connections
 Library           Telnet    newline=CRLF
 Library           String
-Resource          telnet_resource.txt
+Resource          telnet_resource.robot
 
 *** Variables ***
 ${TIMEOUT}        300 milliseconds

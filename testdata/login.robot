@@ -1,7 +1,7 @@
 *** Setting ***
 Test Teardown     Close All Connections
 Library           Telnet
-Resource          telnet_resource.txt
+Resource          telnet_resource.robot
 
 *** Test Case ***
 

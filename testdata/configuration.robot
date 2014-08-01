@@ -3,7 +3,7 @@ Test Setup        Open Connection    ${HOST}
 Test Teardown     Close All Connections
 Library           Telnet    3.142    CRLF    $    REGEXP    ASCII    strict    DeBuG     window_size=95x95
 Library           String
-Resource          telnet_resource.txt
+Resource          telnet_resource.robot
 
 *** Test Cases ***
 Library Default Window Size

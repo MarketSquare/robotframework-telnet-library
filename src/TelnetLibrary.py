@@ -409,7 +409,7 @@ class TelnetLibrary:
             return int(cols), int(rows)
         except ValueError:
             raise ValueError("Invalid window size '%s'. Should be "
-                             "<rows>x<columns>." % window_size)
+                             "<columns>x<rows>." % window_size)
 
     def _get_connection(self, *args):
         """Can be overridden to use a custom connection."""
@@ -1151,11 +1151,11 @@ class TelnetConnection(telnetlib.Telnet):
 class TerminalEmulator:
 
     def __init__(self, window_size=None, newline="\r\n"):
-        self._rows, self._columns = window_size or (200, 200)
+        self._columns, self._rows = window_size or (200, 200)
         self._newline = newline
         self._stream = pyte.Stream()
-        self._screen = pyte.HistoryScreen(self._rows,
-                                          self._columns,
+        self._screen = pyte.HistoryScreen(self._columns,
+                                          self._rows,
                                           history=100000)
         self._stream.attach(self._screen)
         self._buffer = ''

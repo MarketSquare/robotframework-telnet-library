@@ -1,6 +1,6 @@
 *** Settings ***
 Suite Teardown    Close All Connections
-Library           Telnet
+Library           TelnetLibrary
 Resource          telnet_resource.robot
 
 *** Test Cases ***

@@ -1,7 +1,7 @@
 *** Settings ***
 Test Setup        Open Connection    ${HOST}
 Test Teardown     Close All Connections
-Library           Telnet    3.142    CRLF    $    False    ASCII    strict    DeBuG     window_size=95x95   terminal_emulation=NO
+Library           ATelnet    3.142    CRLF    $    False    ASCII    strict    DeBuG     window_size=95x95   terminal_emulation=NO
 Library           String
 Resource          telnet_resource.robot
 
@@ -188,7 +188,7 @@ Configuration fails if there is no connection
 
 Default configuration
     [Setup]    NONE
-    Import Library    Telnet    WITH NAME    Default
+    Import Library    ATelnet    WITH NAME    Default
     Set Library Search Order    Default
     Open Connection    ${HOST}
     Prompt Should Be    ${NONE}    ${FALSE}
@@ -196,7 +196,7 @@ Default configuration
     Newline Should Be    \r\n
     Encoding Should Be    UTF-8    ignore
     Default Log Level Should Be    INFO
-    [Teardown]    Set Library Search Order    Telnet
+    [Teardown]    Set Library Search Order    ATelnet
 
 Telnetlib's Debug Messages Are Logged On Trace Level
     [Setup]    Login And Set Prompt    encoding=UTF-8

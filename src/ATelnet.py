@@ -33,10 +33,10 @@ from robot.utils import (ConnectionCache, is_bytes, is_string, is_truthy,
 from robot.version import get_version
 
 
-class Telnet:
+class ATelnet:
     """A library providing communication over Telnet connections.
 
-    ``Telnet`` is Robot Framework's standard library that makes it possible to
+    ``ATelnet`` is Robot Framework's library that makes it possible to
     connect to Telnet servers and execute commands on the opened connections.
 
     == Table of contents ==
@@ -45,7 +45,7 @@ class Telnet:
 
     = Connections =
 
-    The first step of using ``Telnet`` is opening a connection with `Open
+    The first step of using ``ATelnet`` is opening a connection with `Open
     Connection` keyword. Typically the next step is logging in with `Login`
     keyword, and in the end the opened connection can be closed with `Close
     Connection`.
@@ -171,7 +171,7 @@ class Telnet:
 
     == Terminal type ==
 
-    By default the Telnet library does not negotiate any specific terminal type
+    By default the ATelnet does not negotiate any specific terminal type
     with the server. If a specific terminal type, for example ``vt100``, is
     desired, the terminal type can be configured in `importing` and with
     `Open Connection`.
@@ -191,7 +191,7 @@ class Telnet:
 
     = Terminal emulation =
 
-    Telnet library supports terminal
+    ATelnet supports terminal
     emulation with [http://pyte.readthedocs.io|Pyte]. Terminal emulation
     will process the output in a virtual screen. This means that ANSI escape
     codes, like cursor movements, and also control characters, like
@@ -285,7 +285,7 @@ class Telnet:
                  environ_user=None, terminal_emulation=False,
                  terminal_type=None, telnetlib_log_level='TRACE',
                  connection_timeout=None):
-        """Telnet library can be imported with optional configuration parameters.
+        """ATelnet can be imported with optional configuration parameters.
 
         Configuration parameters are used as default values when new
         connections are opened with `Open Connection` keyword. They can also be
@@ -299,14 +299,14 @@ class Telnet:
         respectively.
 
         Examples (use only one of these):
-        | = Setting = | = Value = | = Value =                | = Value =            | = Value =           | = Comment = |
-        | Library     | Telnet    |                          |                      |                     | # default values |
-        | Library     | Telnet    | 5 seconds                |                      |                     | # set only timeout |
-        | Library     | Telnet    | newline=LF               | encoding=ISO-8859-1  |                     | # set newline and encoding using named arguments |
-        | Library     | Telnet    | prompt=$                 |                      |                     | # set prompt |
-        | Library     | Telnet    | prompt=(> |# )           | prompt_is_regexp=yes |                     | # set prompt as a regular expression |
-        | Library     | Telnet    | terminal_emulation=True  | terminal_type=vt100  | window_size=400x100 | # use terminal emulation with defined window size and terminal type |
-        | Library     | Telnet    | telnetlib_log_level=NONE |                      |                     | # disable logging messages from the underlying telnetlib |
+        | = Setting = | = Value =  | = Value =                | = Value =            | = Value =           | = Comment = |
+        | Library     | ATelnet    |                          |                      |                     | # default values |
+        | Library     | ATelnet    | 5 seconds                |                      |                     | # set only timeout |
+        | Library     | ATelnet    | newline=LF               | encoding=ISO-8859-1  |                     | # set newline and encoding using named arguments |
+        | Library     | ATelnet    | prompt=$                 |                      |                     | # set prompt |
+        | Library     | ATelnet    | prompt=(> |# )           | prompt_is_regexp=yes |                     | # set prompt as a regular expression |
+        | Library     | ATelnet    | terminal_emulation=True  | terminal_type=vt100  | window_size=400x100 | # use terminal emulation with defined window size and terminal type |
+        | Library     | ATelnet    | telnetlib_log_level=NONE |                      |                     | # disable logging messages from the underlying telnetlib |
         """
         self._timeout = timeout or 3.0
         self._set_connection_timeout(connection_timeout)

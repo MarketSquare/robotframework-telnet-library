@@ -1,6 +1,6 @@
 *** Settings ***
 Test Teardown     Close All Connections
-Library           Telnet
+Library           ATelnet
 Resource          telnet_resource.robot
 
 *** Test Cases ***

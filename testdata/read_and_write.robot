@@ -1,7 +1,7 @@
 *** Settings ***
 Test Setup        Login And Set Prompt
 Test Teardown     Close All Connections
-Library           Telnet    newline=CRLF
+Library           ATelnet    newline=CRLF
 Library           String
 Resource          telnet_resource.robot
 

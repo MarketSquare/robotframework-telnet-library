@@ -8,10 +8,10 @@ it was extracted out of it as a standalone extension.
 
 ***
 
-Run a local Telnet server:
+Run a local Telnet server for tests:
 
-    docker build -t telnet-server .
-    docker run -it --rm --network=host telnet-server
+    docker build -t telnet-server testresources
+    docker run -itd --rm --network=host telnet-server
 
 Execute tests:
 

@@ -212,7 +212,7 @@ class ATelnet:
     changed anymore after opening the connection.
 
     Examples:
-    | `Open Connection` | lolcathost | terminal_emulation=True | terminal_type=vt100 | window_size=400x100 |
+    | `Open Connection` | localhost | terminal_emulation=True | terminal_type=vt100 | window_size=400x100 |
 
     As a prerequisite for using terminal emulation, you need to have Pyte
     installed. Due to backwards incompatible changes in Pyte, different

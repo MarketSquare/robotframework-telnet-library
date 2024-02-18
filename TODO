@@ -1,0 +1,14 @@
+Rename to TelnetLibrary to not conflict with the standard library.
+
+Rewrite tests to get rid of invoking `robot.run`?
+
+Probably drop all tags or rename them to avoid confusion?
+
+Make Pyte a required dependency?
+
+Publish PyPI package.
+
+Import our PRs.
+
+Switch from telnetlib to https://pypi.org/project/telnetlib3/ or
+https://pypi.org/project/Exscript/ ?

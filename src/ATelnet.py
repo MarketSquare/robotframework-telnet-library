@@ -30,7 +30,6 @@ from robot.api import logger
 from robot.api.deco import keyword
 from robot.utils import (ConnectionCache, is_bytes, is_string, is_truthy,
                          secs_to_timestr, seq2str, timestr_to_secs)
-from robot.version import get_version
 
 
 class ATelnet:
@@ -276,7 +275,7 @@ class ATelnet:
     considering also ``OFF`` and ``0`` false is new in Robot Framework 3.1.
     """
     ROBOT_LIBRARY_SCOPE = 'SUITE'
-    ROBOT_LIBRARY_VERSION = get_version()
+    ROBOT_LIBRARY_VERSION = '1.0.0'
 
     def __init__(self, timeout='3 seconds', newline='CRLF',
                  prompt=None, prompt_is_regexp=False,

@@ -1,5 +1,5 @@
 *** Settings ***
-Suite Setup       Run Tests    --loglevel DEBUG    standard_libraries/telnet/terminal_emulation.robot
+Suite Setup       Run Tests    --loglevel DEBUG    terminal_emulation.robot
 Resource          telnet_resource.robot
 
 *** Test Cases ***

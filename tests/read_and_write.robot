@@ -1,5 +1,5 @@
 *** Settings ***
-Suite Setup       Run Tests    --loglevel DEBUG    standard_libraries/telnet/read_and_write.robot
+Suite Setup       Run Tests    --loglevel DEBUG    read_and_write.robot
 Resource          telnet_resource.robot
 
 *** Test Cases ***

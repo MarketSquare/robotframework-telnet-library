@@ -1,5 +1,5 @@
 *** Settings ***
-Suite Setup       Run Tests    --loglevel DEBUG    standard_libraries/telnet/configuration.robot
+Suite Setup       Run Tests    --loglevel DEBUG    configuration.robot
 Resource          telnet_resource.robot
 
 *** Test Cases ***

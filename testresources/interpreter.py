@@ -90,7 +90,7 @@ class Interpreter:
 
     @property
     def runner(self):
-        return self.interpreter + [str(ROBOT_DIR / 'run.py')]
+        return self.interpreter + ['-m', 'robot.run']
 
     @property
     def rebot(self):

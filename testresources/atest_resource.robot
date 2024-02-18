@@ -31,8 +31,7 @@ ${COMMON DEFAULTS}
 ${RUNNER DEFAULTS}
 ...               ${COMMON DEFAULTS}
 ...               --ConsoleMarkers OFF
-...               --PYTHONPATH "${CURDIR}${/}..${/}testresources${/}testlibs"
-...               --PYTHONPATH "${CURDIR}${/}..${/}testresources${/}listeners"
+...               --PYTHONPATH "${CURDIR}${/}..${/}src"
 
 *** Keywords ***
 Run Tests

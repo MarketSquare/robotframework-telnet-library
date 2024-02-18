@@ -1,5 +1,5 @@
 *** Settings ***
-Suite Setup       Run Tests    ${EMPTY}    standard_libraries/telnet/login.robot
+Suite Setup       Run Tests    ${EMPTY}    login.robot
 Resource          telnet_resource.robot
 
 *** Test Cases ***

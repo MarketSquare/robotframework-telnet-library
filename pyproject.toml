@@ -1,0 +1,42 @@
+[project]
+name = "robotframework-telnet-library"
+version = "1.0.0"
+description = "A library providing communication over Telnet connections"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+keywords = ["telnet", "library", "robot", "robotframework"]
+maintainers = [
+  {name = "3mdeb Sp. z o.o.", email = "contact@3mdeb.com"}
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: Apache Software License",
+  "Framework :: Robot Framework :: Library",
+  "Topic :: Software Development :: Testing",
+  "Topic :: Software Development :: Testing :: Acceptance",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "robotframework >= 7.0"
+]
+
+[project.optional-dependencies]
+pty = ["pyte >= 0.6"]
+test = ["xmlschema"]
+
+[project.urls]
+"Homepage" = "https://github.com/MarketSquare/robotframework-telnet-library"
+"Bug Reports" = "https://github.com/MarketSquare/robotframework-telnet-library/issues"
+"Source" = "https://github.com/MarketSquare/robotframework-telnet-library"
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"

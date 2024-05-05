@@ -16,15 +16,11 @@
 from contextlib import contextmanager
 import inspect
 import re
+import pyte
 import socket
 import struct
 import telnetlib
 import time
-
-try:
-    import pyte
-except ImportError:
-    pyte = None
 
 from robot.api import logger
 from robot.api.deco import keyword
@@ -213,15 +209,9 @@ class TelnetLibrary:
     Examples:
     | `Open Connection` | localhost | terminal_emulation=True | terminal_type=vt100 | window_size=400x100 |
 
-    As a prerequisite for using terminal emulation, you need to have Pyte
-    installed. Due to backwards incompatible changes in Pyte, different
-    Robot Framework versions support different Pyte versions:
-
-    - Pyte 0.6 and newer are supported by Robot Framework 3.0.3.
-      Latest Pyte version can be installed (or upgraded) with
-      ``pip install --upgrade pyte``.
-    - Pyte 0.5.2 and older are supported by Robot Framework 3.0.2 and earlier.
-      Pyte 0.5.2 can be installed with ``pip install pyte==0.5.2``.
+    Due to backwards incompatible changes in Pyte, versions of Pyte older than
+    0.6 are not supported. Latest Pyte version can be installed (or upgraded)
+    with ``pip install --upgrade pyte``.
 
     = Logging =
 
@@ -1145,9 +1135,6 @@ class TelnetConnection(telnetlib.Telnet):
     def _check_terminal_emulation(self, terminal_emulation):
         if not terminal_emulation:
             return False
-        if not pyte:
-            raise RuntimeError("Terminal emulation requires pyte module!\n"
-                               "http://pypi.python.org/pypi/pyte/")
         return TerminalEmulator(window_size=self._window_size,
                                 newline=self._newline)
 

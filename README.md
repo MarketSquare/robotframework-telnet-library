@@ -9,6 +9,12 @@ terminal emulation.
 This library used to be known as "Telnet standard library" of Robot Framework
 until it was extracted out of it as a standalone extension.
 
+### Installation
+
+```bash
+pip install robotframework-telnetlibrary
+```
+
 ### License
 
 Apache License 2.0

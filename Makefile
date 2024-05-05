@@ -1,10 +1,23 @@
-.PHONY: check docs start_telnet stop_telnet
+.PHONY: check docs package start_telnet stop_telnet upload
 
 container_name := telnetlib-telnet
 
 docs:
 	mkdir -p doc
 	libdoc src/TelnetLibrary.py doc/TelnetLibrary.html
+
+package:
+	$(RM) -r dist
+	python3 -m pip install --upgrade build
+	python3 -m build
+
+upload:
+	@if [ ! -d dist ]; then \
+		echo "error: no 'dist/', run 'make package' first."; \
+	    exit 1; \
+	fi
+	python3 -m pip install --upgrade twine
+	python3 -m twine upload --repository testpypi dist/*
 
 check: start_telnet
 	TEMPDIR=$$PWD/tmp robot --pythonpath testresources tests/

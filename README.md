@@ -1,18 +1,39 @@
-A library providing communication over Telnet connections.
+## TelnetLibrary for Robot Framework
 
-Telnet Library is Robot Framework's library that makes it possible to connect
-to Telnet servers and execute commands on the opened connections.
+This is a library providing communication over Telnet connections.
 
-This library used to be known as Telnet standard library of Robot Framework
+TelnetLibrary is Robot Framework's library that makes it possible to connect
+to Telnet servers and execute commands on the opened connections with or without
+terminal emulation.
+
+This library used to be known as "Telnet standard library" of Robot Framework
 until it was extracted out of it as a standalone extension.
 
-***
+### Installation
 
-Run a local Telnet server for tests:
+```bash
+pip install robotframework-telnetlibrary
+```
 
-    docker build -t telnet-server testresources
-    docker run -itd --rm --network=host telnet-server
+### Regenerating documentation
 
-Execute tests:
+```bash
+make docs
+```
 
-    TEMPDIR=$PWD/tmp robot --pythonpath -variable-file "testresources/interpreter.py;$(which python3)" tests/connections.robot
+### Running tests
+
+```bash
+# builds and starts Docker container with Telnet server explicilty
+make start_telnet
+
+# also builds and starts Docker container for tests if necessary
+make check
+
+# stops Docker container if it's running
+make stop_telnet
+```
+
+### License
+
+Apache License 2.0

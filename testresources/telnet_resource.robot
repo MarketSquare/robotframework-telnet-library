@@ -1,14 +1,10 @@
 *** Settings ***
-Documentation     General variables and keywords used by the execution side of
-...               Robot Framework acceptance tests.
 Library           OperatingSystem
 Library           Process
-Library           Collections
 Library           String
 Library           TestCheckerLibrary
-Library           TestHelper           # Combine with TestCheckerLibrary?
-Library           XML
-Variables         atest_variables.py
+Variables         test_variables.py    # Provides DATADIR
+Variables         ${DATADIR}/telnet_variables.py
 
 *** Variables ***
 ${OUTDIR}         %{TEMPDIR}${/}output

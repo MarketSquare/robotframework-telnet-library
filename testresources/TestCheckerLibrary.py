@@ -1,8 +1,6 @@
 import os
 import re
 
-from xmlschema import XMLSchema
-
 from robot import utils
 from robot.api import logger
 from robot.libraries.BuiltIn import BuiltIn
@@ -110,20 +108,13 @@ class NoSlotsTestSuite(TestSuite):
 class TestCheckerLibrary:
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
 
-    def __init__(self):
-        self.schema = XMLSchema('testresources/robot.xsd')
-
-    def process_output(self, path, validate=None):
+    def process_output(self, path):
         set_suite_variable = BuiltIn().set_suite_variable
         if not path or path.upper() == 'NONE':
             set_suite_variable('$SUITE', None)
             logger.info("Not processing output.")
             return
         path = path.replace('/', os.sep)
-        if validate is None:
-            validate = os.getenv('ATEST_VALIDATE_OUTPUT', False)
-        if utils.is_truthy(validate):
-            self._validate_output(path)
         try:
             logger.info("Processing output '%s'." % path)
             result = Result(root_suite=NoSlotsTestSuite())
@@ -136,23 +127,6 @@ class TestCheckerLibrary:
         result.visit(ProcessResults())
         set_suite_variable('$SUITE', result.suite)
         set_suite_variable('$STATISTICS', result.statistics)
-        set_suite_variable('$ERRORS', result.errors)
-
-    def _validate_output(self, path):
-        schema_version = self._get_schema_version(path)
-        if schema_version != self.schema.version:
-            raise AssertionError(
-                'Incompatible schema versions. Schema has `version="%s"` '
-                'but output file has `schemaversion="%s"`.'
-                % (self.schema.version, schema_version)
-        )
-        self.schema.validate(path)
-
-    def _get_schema_version(self, path):
-        with open(path, encoding='UTF-8') as f:
-            for line in f:
-                if line.startswith('<robot'):
-                    return re.search(r'schemaversion="(\d+)"', line).group(1)
 
     def get_test_case(self, name):
         suite = BuiltIn().get_variable_value('${SUITE}')

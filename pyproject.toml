@@ -25,7 +25,8 @@ classifiers = [
 ]
 dependencies = [
   "robotframework >= 7.0",
-  "pyte >= 0.6"
+  "pyte >= 0.6",
+  "telnetlib3 >= 5.0; python_version >= '3.13'"
 ]
 
 [project.urls]

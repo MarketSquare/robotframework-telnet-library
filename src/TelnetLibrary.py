@@ -265,7 +265,7 @@ class TelnetLibrary:
     considering also ``OFF`` and ``0`` false is new in Robot Framework 3.1.
     """
     ROBOT_LIBRARY_SCOPE = 'SUITE'
-    ROBOT_LIBRARY_VERSION = '0.9.0'
+    ROBOT_LIBRARY_VERSION = '0.9.3'
 
     def __init__(self, timeout='3 seconds', newline='CRLF',
                  prompt=None, prompt_is_regexp=False,

@@ -1,6 +1,6 @@
 [project]
 name = "robotframework-telnetlibrary"
-version = "0.9.3"
+version = "1.0.0"
 description = "A Robot Framework library for communication via Telnet protocol"
 readme = "README.md"
 requires-python = ">=3.7"

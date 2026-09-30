@@ -27,7 +27,7 @@ ${RUNNER DEFAULTS}
 Run Tests
     [Arguments]    ${options}=    ${sources}=    ${default options}=${RUNNER DEFAULTS}    ${output}=${OUTFILE}
     [Documentation]    *OUTDIR:* file://${OUTDIR} (regenerated for every run)
-    ${interpreter} =    Create List    /usr/bin/python3    -m    robot
+    ${interpreter} =    Create List    ${{sys.executable}}    -m    robot
     ${result} =    Execute    ${interpreter}    ${options}    ${sources}    ${default options}
     Log Many    RC: ${result.rc}    STDERR:\n${result.stderr}    STDOUT:\n${result.stdout}
     Process Output    ${output}

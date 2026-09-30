@@ -265,7 +265,7 @@ class TelnetLibrary:
     considering also ``OFF`` and ``0`` false is new in Robot Framework 3.1.
     """
     ROBOT_LIBRARY_SCOPE = 'SUITE'
-    ROBOT_LIBRARY_VERSION = '0.9.3'
+    ROBOT_LIBRARY_VERSION = '1.0.0'
 
     def __init__(self, timeout='3 seconds', newline='CRLF',
                  prompt=None, prompt_is_regexp=False,
@@ -1081,6 +1081,9 @@ class TelnetConnection(telnetlib.Telnet):
             raise RuntimeError('No connection open')
 
     def _log(self, msg, level=None):
+        if is_bytes(msg):
+            # Robot Framework 7 would decode raw bytes as latin-1 in the log.
+            msg = msg.decode('ASCII', 'backslashreplace')
         msg = msg.strip()
         if msg:
             logger.write(msg, level or self._default_log_level)

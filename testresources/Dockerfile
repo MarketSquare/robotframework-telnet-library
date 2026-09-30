@@ -1,6 +1,9 @@
 FROM debian:buster
 
-RUN apt-get update && \
+RUN sed -i -e 's|deb.debian.org|archive.debian.org|g' \
+           -e 's|security.debian.org|archive.debian.org|g' \
+           -e '/buster-updates/d' /etc/apt/sources.list && \
+    apt-get -o Acquire::Check-Valid-Until=false update && \
     apt install -y --no-install-recommends telnetd xinetd update-inetd python && \
     apt autoremove -y && \
     apt autoclean -y && \

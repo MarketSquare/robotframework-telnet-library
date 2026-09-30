@@ -18,7 +18,7 @@ Set Window Size
     Window Size Should Be    100    100
 
 Set Invalid Window Size
-    [Documentation]    FAIL ValueError: Invalid window size '100yx100'. Should be <rows>x<columns>.
+    [Documentation]    FAIL ValueError: Invalid window size '100yx100'. Should be <columns>x<rows>.
     [setup]
     Open Connection    ${HOST}    prompt=${PROMPT}    window_size=100yx100
 

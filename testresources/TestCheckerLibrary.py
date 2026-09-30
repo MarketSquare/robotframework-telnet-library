@@ -117,7 +117,7 @@ class TestCheckerLibrary:
         path = path.replace('/', os.sep)
         try:
             logger.info("Processing output '%s'." % path)
-            result = Result(root_suite=NoSlotsTestSuite())
+            result = Result(suite=NoSlotsTestSuite())
             ExecutionResultBuilder(path).build(result)
         except:
             set_suite_variable('$SUITE', None)

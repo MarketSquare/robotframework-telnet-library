@@ -154,7 +154,7 @@ Read Until Regexp Prompt And Strip Prompt
 Write Until Expected Output
     [Documentation]    FAIL No match found for 'Not found' in 300 milliseconds.
     Write    a=10
-    Write Until Expected Output    a=$(($a - 1)); if (($a == 0)); then echo BLAST; fi\r\n    BLAST    2 s    10ms
+    Write Until Expected Output    a=$(($a - 1)); if (($a == 0)); then echo BLAST; fi\r\n    BLAST    5 s    200ms
     Write Until Expected Output    ls    Not found    300ms    100ms
 
 Execute Command

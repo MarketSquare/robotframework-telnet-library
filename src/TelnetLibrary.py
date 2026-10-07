@@ -913,6 +913,8 @@ class TelnetConnection(telnetlib.Telnet):
 
         Args:
             text: Text to write into the connection.
+            char_delay: Optional delay, in seconds, between characters. If
+                given, the text is sent character by character.
 
         This keyword does not append a newline nor consume the written text.
         Use the [Write] keyword if these features are desired.

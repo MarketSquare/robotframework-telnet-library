@@ -1,2 +1,4 @@
 robotframework >= 7.0
 pyte >= 0.6
+# is this syntax correct here?
+telnetlib3 >= 5.0; python_version >= '3.13'

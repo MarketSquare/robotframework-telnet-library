@@ -279,7 +279,7 @@ class TelnetLibrary:
     """
     ROBOT_LIBRARY_SCOPE = 'SUITE'
     ROBOT_LIBRARY_DOC_FORMAT = 'Markdown'
-    ROBOT_LIBRARY_VERSION = '1.0.1'
+    ROBOT_LIBRARY_VERSION = '1.0.2'
 
     def __init__(self, timeout='3 seconds', newline='CRLF',
                  prompt=None, prompt_is_regexp=False,

@@ -1300,7 +1300,9 @@ class TelnetConnection(telnetlib.Telnet):
             self._opt_environ_user(opt, self._environ_user)
         elif cmd == telnetlib.DO and opt == telnetlib.NAWS and self._window_size:
             self._opt_window_size(opt, *self._window_size)
-        elif opt != telnetlib.NOOPT:
+        # telnetlib passes NOOPT for commands without an option, such as SB and
+        # SE. NOOPT is also option 0, BINARY, so check the command instead.
+        elif cmd in (telnetlib.DO, telnetlib.DONT, telnetlib.WILL, telnetlib.WONT):
             self._opt_dont_and_wont(cmd, opt)
 
     def _opt_echo_on(self, opt):
